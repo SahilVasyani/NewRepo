@@ -1,0 +1,30 @@
+{% extends "theme.html" %}
+  {% block style %}
+    <meta name="spam" content="MRMBZA60wg" />
+    <meta name="spam" content="MoExjihOpR" />
+  {% endblock style %}
+
+  {% block content %}
+  <form method="POST" action="selectspamtype" class="main-form">
+  {% csrf_token %}
+  <main role="main">
+  <div class="container my-5">
+    <h3>Spam Type Selection</h3>
+		<center>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-0">
+				<h1 style="color:red">Choose a Spam Type</h1>
+				<p align=center>Confused whether it's a Spam or not? Check it out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+				<h4>Following are the spam types choose any one of them.</h4><br>
+				<a href="textspam"><input type="button" class="btn btn-dark" id="textspam" value="Text Spam" /></a><br><br>
+				<a href="wordspam"><input type="button" class="btn btn-dark" id="wordspam" value="Word/Phrase Spam" /></a><br><br>
+				<a href="email"><input type="button" class="btn btn-dark" id="emailspam" value="Email Spam" /></a><br><br>
+				<a href="text"><input type="button" class="btn btn-dark" id="emailspam" value="SMS Message Spam" /></a><br><br>
+				</div>
+			</div>
+		</div>
+		</center>
+   </div>
+</form>
+    {% endblock content %}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'Spam/Css/bootstrap.min.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'Spam/Css/Style.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'Spam/Css/radio.css' %}"> -->
+    <title>Answer</title>
+</head>
+
+<body>
+<header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="">
+          <h1>Sahil's Spam Detection</h1>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse " id="navbarNavDropdown">
+          <ul class="navbar-nav justify-content-end container-fluid p-0 mt-2 mt-md-0">
+              <li class="nav-item text-right">
+              <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="d-block d-md-none border-top border-top-1"></li>
+              <li class="nav-item dropdown text-right">
+              <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Spam
+              </a>
+              <div class="dropdown-menu text-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="">E-Mail</a>
+                  <a class="dropdown-item" href="">Comment</a>
+                  <a class="dropdown-item" href="">SMS(Phone Number)</a>
+              </div>
+              </li>
+			  
+			  <li class="d-block d-md-none border-top border-top-1"></li>
+              <li class="nav-item text-right">
+              <a class="nav-link" href="">FAQ&nbsp;</a>
+              </li>
+			  
+			   <li class="d-block d-md-none border-top border-top-1"></li>
+              <li class="nav-item text-right">
+              <a class="nav-link" href="">About&nbsp;</a>
+              </li>
+
+              <li class="nav-item text-right">
+				  {% if 'authdetails' in request.session %}
+                  <a class="btn btn-outline-dark" href="logout">Logout</a>
+                  {% csrf_token %}
+                  <input type="hidden">
+                  </form>
+                  {% else %}
+                  <a class="btn btn-dark" href="">Sign in</a>&nbsp;
+                  <a class="btn btn-outline-dark" href="">Sign up</a>
+                  {% endif %}
+              </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+	<br>
+	<br>
+	<br><br><br><br><br><br>
+    <!-- Main Section Start -->
+    <!-- <section class="AnswerSection"> -->
+	<div class="card">
+            <div class="card-body">
+                <div class="col-md-0">
+<center>
+<h1>For the Spam Type Text Spam<br>
+and for the Algorithm selected, following is the Result</h1><br>
+<!-- {% if algo == "Algo-1" %} Algorithm 1 {% else %} Algorithm 2 {% endif %} -->
+        <p class="answer">
+            {% if answer == "ham" %} <h1>Entered Text is: Not Spam</h1> {% else %} <h1>Entered Text is: Spam</h1> {% endif %}
+        </p>
+        <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">
+    <!-- </section> -->
+    <!-- Main Section End -->
+    <script src="./Js/JQuery.js"></script>
+    <script src="./Js/Bootstrap.min.js"></script>
+    <script src="./Js/Main.js"></script>
+</body>
+</div>
+</div>
+</div>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth
+    </title>
+    <style>
+        .c-holder{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .form-holder{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .auth-title {
+            color: red;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        form input {
+            width: 230px;
+            font-size: 1.4rem;
+            margin-bottom: 0.4em;
+            border-radius: 0.4em;
+            padding: 0.3em;
+        }
+        
+        form button {
+            width: 230px;
+            font-size: 1.4rem;
+            margin-bottom: 0.4em;
+            border-radius: 0.4em;
+            padding: 0.3em;
+            border: none;
+            cursor: pointer;
+            background-color: #abc;
+            color: #fff;
+        }
+    </style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">  </head>
+	
+<body id="l">
+   <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="">
+          <h1>Sahil's Spam Detection</h1>
+		  </a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+		  <div class="collapse navbar-collapse " id="navbarNavDropdown">
+          <ul class="navbar-nav justify-content-end container-fluid p-0 mt-2 mt-md-0">
+		  <li class="nav-item text-right">
+				  {% if 'authdetails' in request.session %}
+                  <a class="btn btn-outline-dark" href="logout">Logout</a>
+                  {% csrf_token %}
+                  <input type="hidden">
+                  </form>
+                  {% else %}
+                  <a class="btn btn-dark" href="">Sign in</a>&nbsp;
+                  <a class="btn btn-outline-dark" href="">Sign up</a>
+                  {% endif %}
+              </li>
+          </ul>
+        </div>
+      </nav>
+    <form action="/" method="post">{% csrf_token %}
+        <div class="c-holder">
+            <h2 class="auth-title">User Authentication</h2>
+            <div class="form-holder">
+                <input type="text" placeholder="Enter Username" name="username" id="username">
+                <input type="password" placeholder="Enter Password" name="password" id="password">
+                <button type="submit">Auth</button>
+				<a href="home.html">To continue as guest, Enter username and password as "guest"<a>
+            </div>
+        </div>
+    </form>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+
+</html>
